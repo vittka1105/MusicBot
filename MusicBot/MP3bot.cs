@@ -520,7 +520,7 @@ namespace MP3Bot
 
                 var json = webClient.DownloadString($"https://apimusicaudiobook.herokuapp.com/Music/Playlists");
                 var result = JsonConvert.DeserializeObject<PlaylistsModel>(json);
-                for (int i = 0; i < result.items.Length; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     await botClient.SendTextMessageAsync(message.Chat.Id, $"Added at: {result.items[i].added_at}"+
                         $"\nAlbum type: {result.items[i].track.album.album_type}"+
